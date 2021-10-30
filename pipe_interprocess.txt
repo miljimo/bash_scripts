@@ -1,0 +1,4 @@
+# Userstanding Communication In Linux
+
+Inter-process communication send signals using the system signal "SIGPIPE" 
+
