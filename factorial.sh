@@ -3,17 +3,15 @@
 
 
 function factorial(){
-  if [ $1 -le 1 ] 
-    then
-     return 1
+  local n=$(($1 * 1))
+  if [ $n -le 1 ]; then
+     echo 1
+     return ;
   fi
-  
-  factorial $(($1 - 1))
-  ret=$? 
-  return $(($1 * $ret))
+  local result=$(factorial $(($n - 1)))
+  echo $(($result * $n))
 }
 
-factorial $(($1 * 1));
 
-echo "Factorial of $1  is = $?"
-
+result=$(factorial $(($1 * 1)))
+echo "Fact($(($1 * 1))) = $result"
